@@ -10,14 +10,15 @@ source 'http://ruby.taobao.org'
 #3. 不确定使用注释掉的
 
 gem "rails", "3.2.6"
-gem "jquery-rails", "2.0.1"
+gem "jquery-rails", "2.0.2"
 
-# 上传组件
-gem 'carrierwave', '0.6.2'
-gem 'carrierwave-mongoid', '0.2.0', :require => 'carrierwave/mongoid'
-gem 'carrierwave-upyun', '0.1.3'
-gem 'mini_magick','3.3', :require => false
-
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'uglifier', '>= 1.0.3'
+end
+gem "bootstrap-sass", ">= 2.0.3"
+gem "rails-i18n","0.1.8"
 # Mongoid 辅助插件
 gem "mongoid", "2.4.11"
 gem "bson_ext", "1.6.4"
@@ -27,6 +28,13 @@ gem 'mongoid_rails_migrations', '~> 0.0.14'
 gem "mongoid_colored_logger", "0.1.1"
 
 gem 'haml', "3.1.6"
+
+
+# 上传组件
+gem 'carrierwave', '0.6.2'
+gem 'carrierwave-mongoid', '0.2.0', :require => 'carrierwave/mongoid'
+gem 'carrierwave-upyun', '0.1.3'
+gem 'mini_magick','3.3', :require => false
 
 #自动客户端效验
 gem "client_side_validations", "3.1.4"
@@ -57,6 +65,7 @@ gem 'bootstrap-will_paginate', '0.0.3'
 gem 'bootstrap_helper', "1.4.1"
 
 
+
 # permission
 gem "cancan", "~> 1.6.7"
 
@@ -75,7 +84,7 @@ gem 'simple_form', "2.0.2"
 # gem "omniauth", "~> 1.0.1"
 # gem "omniauth-github", "~> 1.0.0"
 
-#gem "rails-i18n","0.1.8"
+
 
 # Redis 命名空间
 # gem 'redis-namespace','~> 1.0.2'
