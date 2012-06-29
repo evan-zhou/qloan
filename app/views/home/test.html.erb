@@ -1,0 +1,243 @@
+
+<div class="span8" style="border:1px solid red">
+  <form class="form-horizontal">
+        <fieldset>
+          <div class="control-group">
+            <label class="control-label" for="focusedInput">Focused input</label>
+            <div class="controls">
+              <input class="input-xlarge focused" id="focusedInput" type="text" value="This is focused…">
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label">Uneditable input</label>
+            <div class="controls">
+              <span class="input-xlarge uneditable-input">Some value here</span>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="disabledInput">Disabled input</label>
+            <div class="controls">
+              <input class="input-xlarge disabled" id="disabledInput" type="text" placeholder="Disabled input here…" disabled>
+            </div>
+          </div>
+          <div class="control-group">
+            <label class="control-label" for="optionsCheckbox2">Disabled checkbox</label>
+            <div class="controls">
+              <label class="checkbox">
+                <input type="checkbox" id="optionsCheckbox2" value="option1" disabled>
+                This is a disabled checkbox
+              </label>
+            </div>
+          </div>
+          <div class="control-group warning">
+            <label class="control-label" for="inputWarning">Input with warning</label>
+            <div class="controls">
+              <input type="text" id="inputWarning">
+              <span class="help-inline">Something may have gone wrong</span>
+            </div>
+          </div>
+          <div class="control-group error">
+            <label class="control-label" for="inputError">Input with error</label>
+            <div class="controls">
+              <input type="text" id="inputError">
+              <span class="help-inline">Please correct the error</span>
+            </div>
+          </div>
+          <div class="control-group success">
+            <label class="control-label" for="inputSuccess">Input with success</label>
+            <div class="controls">
+              <input type="text" id="inputSuccess">
+              <span class="help-inline">Woohoo!</span>
+            </div>
+          </div>
+          <div class="control-group success">
+            <label class="control-label" for="selectError">Select with success</label>
+            <div class="controls">
+              <select id="selectError">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+              <span class="help-inline">Woohoo!</span>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button class="btn">Cancel</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    
+    <h3>Button</h3>
+    <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Button</th>
+        <th>class=""</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><button class="btn btn-large" href="#">Default</button></td>
+        <td><code>btn</code></td>
+        <td>Standard gray button with gradient</td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-primary btn-mini" href="#">Primary</button></td>
+        <td><code>btn btn-primary</code></td>
+        <td>Provides extra visual weight and identifies the primary action in a set of buttons</td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-info" href="#">Info</button></td>
+        <td><code>btn btn-info</code></td>
+        <td>Used as an alternative to the default styles</td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-success" href="#">Success</button></td>
+        <td><code>btn btn-success</code></td>
+        <td>Indicates a successful or positive action</td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-warning" href="#">Warning</button></td>
+        <td><code>btn btn-warning</code></td>
+        <td>Indicates caution should be taken with this action</td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-danger" href="#">Danger</button></td>
+        <td><code>btn btn-danger</code></td>
+        <td>Indicates a dangerous or potentially negative action</td>
+      </tr>
+      <tr>
+        <td><button class="btn btn-inverse" href="#">Inverse</button></td>
+        <td><code>btn btn-inverse</code></td>
+        <td>Alternate dark gray button, not tied to a semantic action or use</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <table class="table">
+    <tr>
+      <th colspan=2><h2>table</h2></th>
+    </tr>
+    <tr>
+      <th>class</th>
+      <th>描述</th>
+    </tr>
+    <tr>
+      <td>table</td>
+      <td>无border,每行有hr分割线</td>
+    </tr>
+    <tr>
+      <td>table-bordered</td>
+      <td>有border</td>
+    </tr>
+    <tr>
+      <td>table-striped</td>
+      <td>相邻排背景颜色不同</td>
+    </tr>
+        <tr>
+      <td>table-condensed</td>
+      <td>排与排之间紧凑</td>
+    </tr>
+  </table>
+  
+  
+  
+  <p>
+    <i class="icon-search"></i><address>宽度都由class=spanx设置</address>
+  </p>
+  
+  <h3>例子</h3>
+  <p>
+    可用在按钮，按钮组的工具条，导航栏或是输入框的前缀中。
+  </p>
+  <div class="row">
+    <div class="span4">
+
+      <div class="btn-toolbar" style="margin-bottom: 9px;">
+        <div class="btn-group">
+          <a class="btn" href="#"><i class="icon-align-left"></i></a>
+          <a class="btn" href="#"><i class="icon-align-center"></i></a>
+          <a class="btn" href="#"><i class="icon-align-right"></i></a>
+          <a class="btn" href="#"><i class="icon-align-justify"></i></a>
+        </div>
+        <div class="btn-group">
+          <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> 用户</a>
+
+          <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#"><i class="icon-pencil"></i> 修改</a></li>
+            <li><a href="#"><i class="icon-trash"></i> 删除</a></li>
+            <li><a href="#"><i class="icon-ban-circle"></i> 禁止</a></li>
+            <li class="divider"></li>
+
+            <li><a href="#"><i class="i"></i> 设为管理员</a></li>
+          </ul>
+        </div>
+      </div>
+      <p>
+        <a class="btn" href="#"><i class="icon-refresh"></i> 刷新</a>
+        <a class="btn btn-success" href="#"><i class="icon-shopping-cart icon-white"></i> 签出</a>
+
+        <a class="btn btn-danger" href="#"><i class="icon-trash icon-white"></i> 删除</a>
+      </p>
+      <p>
+        <a class="btn btn-large" href="#"><i class="icon-comment"></i> 评论</a>
+        <a class="btn btn-small" href="#"><i class="icon-cog"></i> 设置</a>
+        <a class="btn btn-small btn-info" href="#"><i class="icon-info-sign icon-white"></i> 更多信息</a>
+      </p>
+    </div>
+     <div class="span4">
+      <div class="well" style="padding: 8px 0pt;">
+        <ul class="nav nav-list">
+          <li class="active"><a href="#"><i class="icon-home icon-white"></i> 首页</a></li>
+          <li><a href="#"><i class="icon-book"></i> 类库</a></li>
+
+          <li><a href="#"><i class="icon-pencil"></i> 应用</a></li>
+          <li><a href="#"><i class="i"></i> 音乐</a></li>
+        </ul>
+      </div> <!-- /well -->
+    </div>
+
+        
+      
+  </div>
+       
+  <div class="control-group">
+          <label class="control-label" for="inputIcon">邮件地址</label>
+          <div class="controls">
+            <div class="input-prepend">
+              <span class="add-on"><i class="icon-envelope"></i></span><input class="span2" id="inputIcon" style="margin: 0pt;" type="text">
+            </div>
+          </div>
+        </div>
+        
+        
+      <ul class="nav nav-tabs">
+    <li class="active">
+   <a href="#">首页</a>
+</li>
+  <li class="active"><a href="#">尾页</a></li>
+    <li><a href="#">...</a></li>
+   </ul>  
+        
+  
+<a  href="#">ajajajaj</a>
+
+
+<div class="alert">
+            <a class="close" data-dismiss="alert" href="#">×</a>
+            <h4 class="alert-heading" data-dismiss="alert">微博控们注意了！</h4>
+            <p>
+	      出游微博晒幸福时，最好不要泄露出游时间、人数，别泄露住址，谨慎晒出游照片，以免让贼判断出你家是否有人。因为小偷说不定会盯上你的微博，“随着微博的发展，贼也很时尚啊！”
+	    </p>
+            <p>
+              <a class="btn btn-danger" href="#">接受建议</a> <a class="btn" href="#">不当回事</a>
+
+            </p>
+          </div>

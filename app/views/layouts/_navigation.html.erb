@@ -65,7 +65,7 @@
   </li>
 
 </ul>
-<ul class="nav fr">
+<ul class="nav pull-right">
   <% if user_signed_in? %>
     <li>
     <%= link_to '注册', destroy_user_session_path, :method=>'delete' %>        
@@ -90,4 +90,6 @@
     </li>
   <% end %>
 </ul>
+
+
 

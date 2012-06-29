@@ -3,7 +3,11 @@ Qloan::Application.routes.draw do
   
   root :to => "home#index"
   
-  resources :home
+  resources :home do
+    collection do
+      get 'test'
+    end
+  end
   resources :borrow
   # The priority is based upon order of creation:
   # first created -> highest priority.

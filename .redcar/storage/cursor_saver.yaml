@@ -1,0 +1,55 @@
+--- 
+cursor_positions: 
+  - :path: app/controllers/home_controller.rb
+    :cursor_offset: 150
+    :timestamp: 2012-06-29 09:39:18 +08:00
+  - :path: app/assets/stylesheets/bootstrap_and_overrides.css.scss
+    :cursor_offset: 339
+    :timestamp: 2012-06-29 11:37:39 +08:00
+  - :path: app/views/layouts/application.html.haml
+    :cursor_offset: 522
+    :timestamp: 2012-06-28 14:33:32 +08:00
+  - :path: app/controllers/application_controller.rb
+    :cursor_offset: 80
+    :timestamp: 2012-06-26 14:25:31 +08:00
+  - :path: app/controllers/borrow_controller.rb
+    :cursor_offset: 11
+    :timestamp: 2012-06-28 09:34:23 +08:00
+  - :path: Gemfile
+    :cursor_offset: 324
+    :timestamp: 2012-06-28 13:37:31 +08:00
+    :selection_offset: 338
+    :block_selection_mode: false
+  - :path: app/views/home/index.html.erb
+    :cursor_offset: 2216
+    :timestamp: 2012-06-28 16:57:22 +08:00
+  - :path: app/views/layouts/application.html.erb.html
+    :cursor_offset: 1082
+    :timestamp: 2012-06-28 09:34:23 +08:00
+  - :path: config/routes.rb
+    :cursor_offset: 141
+    :timestamp: 2012-06-29 09:40:00 +08:00
+    :selection_offset: 137
+    :block_selection_mode: false
+  - :path: app/views/home/test.html.erb
+    :cursor_offset: 8241
+    :timestamp: 2012-06-29 11:54:18 +08:00
+  - :path: app/assets/stylesheets/application.css.scss
+    :cursor_offset: 0
+    :timestamp: 2012-06-28 09:34:23 +08:00
+  - :path: app/views/layouts/_navigation.html.erb
+    :cursor_offset: 2370
+    :timestamp: 2012-06-29 11:50:51 +08:00
+  - :path: app/views/devise/registrations/new.html.erb
+    :cursor_offset: 186
+    :timestamp: 2012-06-29 14:32:29 +08:00
+  - :path: app/views/devise/shared/_links.erb
+    :cursor_offset: 1030
+    :timestamp: 2012-06-29 14:03:05 +08:00
+  - :path: config/locales/devise.zh-CN.yml
+    :cursor_offset: 3157
+    :timestamp: 2012-06-29 14:12:26 +08:00
+  - :path: app/views/shared/ _error_messages.html.erb
+    :cursor_offset: 319
+    :timestamp: 2012-06-29 14:18:11 +08:00
+files_to_retain: 0

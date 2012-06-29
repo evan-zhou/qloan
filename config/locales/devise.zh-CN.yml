@@ -98,3 +98,4 @@ zh-CN:
       already_confirmed: "已确认"
       not_found: "未找到"
       not_locked: "未锁定"
+      not_saved: "有 %{count} 个错误发生导致无法被保存。"
