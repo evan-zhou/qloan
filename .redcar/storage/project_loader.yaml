@@ -3,9 +3,11 @@ open_files:
   - app/views/layouts/application.html.erb.html
   - config/routes.rb
   - app/views/home/test.html.erb
-  - app/assets/stylesheets/application.css.scss
   - app/views/layouts/_navigation.html.erb
   - app/views/devise/registrations/new.html.erb
   - app/views/devise/shared/_links.erb
   - config/locales/devise.zh-CN.yml
   - app/views/shared/ _error_messages.html.erb
+  - app/views/sudai/index.html.erb
+  - app/assets/stylesheets/application.css.scss
+  - app/assets/stylesheets/style.css

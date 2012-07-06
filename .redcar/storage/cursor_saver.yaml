@@ -24,19 +24,16 @@ cursor_positions:
     :cursor_offset: 2216
     :timestamp: 2012-06-28 16:57:22 +08:00
   - :path: app/views/layouts/application.html.erb.html
-    :cursor_offset: 1082
+    :cursor_offset: 677
     :timestamp: 2012-06-28 09:34:23 +08:00
-  - :path: config/routes.rb
-    :cursor_offset: 141
-    :timestamp: 2012-06-29 09:40:00 +08:00
-    :selection_offset: 137
+    :selection_offset: 660
     :block_selection_mode: false
+  - :path: config/routes.rb
+    :cursor_offset: 0
+    :timestamp: 2012-07-04 17:32:10 +08:00
   - :path: app/views/home/test.html.erb
     :cursor_offset: 8241
     :timestamp: 2012-06-29 11:54:18 +08:00
-  - :path: app/assets/stylesheets/application.css.scss
-    :cursor_offset: 0
-    :timestamp: 2012-06-28 09:34:23 +08:00
   - :path: app/views/layouts/_navigation.html.erb
     :cursor_offset: 2370
     :timestamp: 2012-06-29 11:50:51 +08:00
@@ -50,6 +47,17 @@ cursor_positions:
     :cursor_offset: 3157
     :timestamp: 2012-06-29 14:12:26 +08:00
   - :path: app/views/shared/ _error_messages.html.erb
-    :cursor_offset: 319
+    :cursor_offset: 328
     :timestamp: 2012-06-29 14:18:11 +08:00
+  - :path: app/views/sudai/index.html.erb
+    :cursor_offset: 708
+    :timestamp: 2012-07-05 16:23:26 +08:00
+    :selection_offset: 703
+    :block_selection_mode: false
+  - :path: app/assets/stylesheets/application.css.scss
+    :cursor_offset: 560
+    :timestamp: 2012-06-28 09:34:23 +08:00
+  - :path: app/assets/stylesheets/style.css
+    :cursor_offset: 2782
+    :timestamp: 2012-07-05 16:11:02 +08:00
 files_to_retain: 0

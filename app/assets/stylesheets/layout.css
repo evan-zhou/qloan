@@ -1,0 +1,23 @@
+/*
+author:TanXiao
+Date:
+*/
+
+/*Layout*/
+#header{
+	border-bottom:4px solid #157f00;
+	min-width:960px;
+}
+#main{
+	width:960px;
+	margin:0 auto;
+	padding:20px 0;
+}
+#footer{
+	width:960px;
+	margin:0 auto;
+	text-align:center;
+}
+ /* ie clear */
+
+/* others clear */
