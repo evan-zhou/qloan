@@ -1,4 +1,8 @@
 Qloan::Application.routes.draw do
+  resources :web_sites
+
+  resources :roles
+
   devise_for :users
   
   root :to => "home#index"

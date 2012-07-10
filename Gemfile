@@ -78,6 +78,9 @@ gem "aws-ses", "~> 0.4.3"
 # 表单
 gem 'simple_form', "2.0.2"
 
+#forbidden assets log
+gem 'quiet_assets'
+
 ####################以下未使用#############
 
 # 三方平台 OAuth 验证登陆

@@ -1,0 +1,553 @@
+
+  <script type="text/javascript">
+  (function($) { 
+  $(function(){
+    $( "#latitude-1" ).progressbar({
+      value: 80
+    });
+    $( "#latitude-2" ).progressbar({
+      value: 80
+    });
+    $( "#latitude-3" ).progressbar({
+      value: 80
+    });
+    $(".rating-wrap a").hover(//鼠标失去焦点
+    function(){
+      alert(1)
+      var _data=$(this).attr("data-hint");
+      $(this).parent().find("a").removeClass("active-star");
+      $(this).addClass("active-star");
+      $(this).parents().find(".hint").addClass("active-hint").text(_data);
+      return false;
+    },
+    function(){
+      var _txt="点击星星为商户打分";
+      $(".rating-wrap a").removeClass("active-star");   
+      $(this).parents().find(".hint").removeClass("active-hint").text(_txt);
+      return false;
+    });
+    
+    $(".rating-wrap a").click(
+      function(){
+         
+      var _index=$(".rating-wrap a").index(this);
+      var _data=$(this).attr("data-hint");
+      //点击星星的时候获取值
+      var  overdata=$(this).attr("data-rate-value");
+      $("#overAllLevel").val(overdata);//总体评价得分
+      //赋值给用户
+      $("#overAllLever").val(overdata);   
+        $(".rating-wrap").mouseout(
+        function(){
+        $(".rating-wrap a").removeClass("active-star");
+        $(".rating-wrap a").eq(_index).addClass("active-star");
+        $(this).parents().find(".hint").addClass("active-hint").text(_data);
+        return false;
+        });
+      });
+    
+    
+    //表单提交
+    $("#submiForm").click(function(){
+      //判断用户是否登录,如果已经登录
+      var anonymousVal=$("#anonymous").val();
+      if(anonymousVal!=1){
+        if($("#userKey").val()==null || $("#userKey").val()==""){
+          $("#login-dialog").dialog("open");//登录
+          return false;
+        }
+        }
+      if($("#overAllLevel").val()==""){
+        alert("请选择星星为网站打分");
+        return false;
+      }
+      if($("#comments").val()==""){
+        alert("请填写评论内容!");
+        return false;
+      }
+      if($("#comments").val().length>500){
+        alert("评论内容少于500字");
+        return false;
+      }
+      
+       document.getElementById("evaluationForm").submit();
+    });
+    
+    
+  });
+  })(jQuery);
+  </script>
+
+
+
+<!--[if IE 6]><div id="ie6" class="ie"><![endif]-->
+<!--[if IE 7]><div id="ie7" class="ie"><![endif]-->
+
+
+
+
+ 
+               
+        
+        <script language="javascript">
+        var isIE=(document.all&&document.getElementById&&!window.opera)?true:false; 
+        var isMozilla=(!document.all&&document.getElementById&&!window.opera)?true:false; 
+        var weburl=window.location.href;
+        var webname=document.title;
+        function addfavorite()
+        {
+        if(isMozilla){
+           if (document.all){ window.external.addFavorite(weburl,webname);}
+           else if (window.sidebar){ window.sidebar.addPanel(webname, weburl,"");}
+        }
+        if(isIE){window.external.AddFavorite(weburl, webname);} 
+        }
+
+        // 发送投诉建议到指定的邮箱
+        function sendSuggest(){
+          if($("#suggest").val() == ""){
+            alert("请填写投诉建议");
+            return;
+          }
+          
+          var suggest = $("#suggest").val();
+          $("#suggest").val("");
+          $("#suggest-dialog").dialog("close");
+          $.ajax({ 
+             type: "POST", 
+             url: "http://www.sudai114.com/suggest.jhtml", 
+             data: "suggest=" + suggest, 
+             async: false,
+             success: function(msg){ 
+               if(eval(msg)){
+                alert("投诉建议成功");
+               }else{
+              alert("投诉建议失败");
+               }
+             } 
+           });          
+        }           
+        </script>
+    
+  
+<div id="main">
+    <!-- 详情页简介 -->
+    <div class="item-box-wrap">
+      <div class="item-box fix">
+        <h6 class="site-name"><a href="http://www.renrendai.com/">人人贷</a></h6>
+        <div class="site-content">
+          <div class="overall-rating fix">
+            <span class="points">80%</span>  <!--总体评价 -->
+              
+            <span class="item-rank-rst2 irr2-star4"></span>
+            
+            <!-- <span class="review">已有<span class="red">1437</span>人评论</span> -->
+          </div>
+          <ul class="any-rating">
+            <li>
+              人气等级：
+              <div class="latitude-wrap">
+                <div id="latitude-1" style="height:100%;" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 80%; "></div></div>
+              </div>
+                <span class="orange">80%</span>
+            </li>
+            <li>
+              利率等级：
+              <div class="latitude-wrap">
+                <div id="latitude-2" style="height:100%;" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 80%; "></div></div>
+              </div>
+                <span class="orange">80%</span>
+            </li>
+            <li>
+              成功等级：
+              <div class="latitude-wrap">
+                <div id="latitude-3" style="height:100%;" class="ui-progressbar ui-widget ui-widget-content ui-corner-all" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><div class="ui-progressbar-value ui-widget-header ui-corner-left" style="width: 80%; "></div></div>
+              </div>
+                <span class="orange">80%</span>
+            </li>
+            <li>所在城市：北京</li>
+            <li>客服电话：400-690-6776</li>
+            <li>正在招标：200</li>
+            <li>普通年利率 0.2</li>
+          </ul>
+        </div>
+        <div class="site-photo">
+             
+          <div class="photo">   <!--图片上传-->
+          
+            <a href="http://www.renrendai.com/" target="_blank" title="人人贷">
+              <img width="260px" height="172px" src="/assets/default.jpg">
+            </a>
+          
+          
+            
+          </div>
+          <div class="star-show fix">
+            <span class="fl-left">推荐等级：</span><span class="item-rank-rst margin-top-2 irr-star5"></span>
+          </div>
+           <div class="button-box">
+              <a href="http://www.renrendai.com/" class="btn-1" style="zoom:1;display:inline-block;line-height:36px;color:#fff;">去看看</a> 
+             
+            <a href="http://www.sudai114.com/detail-26-beijing.html#bottom" class="btn-1" style="zoom:1;display:inline-block;line-height:36px;color:#fff;">我要点评</a>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="item-box-wrap">
+      <div class="item-box fix">
+        <div class="site-detail">
+          <h6 class="company-tit">公司简介</h6>
+          <div class="detail-intro"><!-- 介绍公司内容 -->         
+            <p>人人贷(renrendai.com)为有资金需求和理财需求的个人搭建了一个公平、透明、稳定、高效的网络互动平台。用户可以在人人贷上获得信用评级、发布借款请求满足个人的资金需要；也可以把自己的闲余资金通过人人贷出借给信用良好有资金需求的个人，在获得良好的资金回报率的同时帮助了他人。<br>人人贷缘起<br>随着互联网用户的普及、技术的进步与货币数字化的迅速发展，2005年在英国首次出现个人对个人（P2P）的网络信贷服务平台。这种模式由于使借贷双方互惠双赢，加上其高效便捷的操作方式、个性化的利率定价机制，推出后得到广泛的认可和关注，迅速在其他国家复制。我们团队看到了这种模式将对中国民间信贷及小额贷款行业带来深远积极的影响。我们决定结合中国的社会信用状况，利用可靠的信用审核模型和先进的技术，创建了适合中国的P2P小额信贷网络平台——人人贷(renrendai.com)。<br>社会意义<br>P2P小额贷款是一种将非常小额度的贷款聚集起来借贷给有资金需求人群的一种商业模型。它的社会价值主要体现在满足个人资金需求、发展个人信用体系和提高社会闲散资金利用率三个方面：<br>1）在中国，银行对个人信用贷款的条件要求很高，个人从银行系统融资面临很多困难,P2P小额贷款为需要资金的人提供了新的融资渠道。<br>2）P2P小额贷款主要是以个人信用评价为基础的贷款，它的发展有助于个人体现自身的信用价值，提高社会个人信用体系的建设。<br>3）P2P小额贷款扩宽了个人投资的渠道，加大了资金的流动，提高了社会闲散资金的使用率，促进了经济的发展。<br>P2P网络借贷平台的出现，不仅仅是一个创新的商业模式, 它更为缩小社会贫富差距、创造就业、实现经济长期发展、社会和谐作出了重大贡献。<br>人人贷的愿景<br>我们坚信，随着时代的进步，中国社会的信用体系必将逐步完善，而技术的革新，也必将使民间借贷的模式发生革命性的变化。我们期待在这次进步的浪潮中，走在时代的前端，打造出中国最诚信可靠的P2P网络借贷平台，成为一家卓越的、实现巨大社会价值的企业。 </p>
+          </div>
+        </div>
+        <div class="site-towns">
+          <h6 class="towns-tit">同城网站推荐</h6>
+          
+          
+          <div class="tonws-box">
+            
+              <a href="http://www.sudai114.com/detail-948-beijing.html" title="速贷114">速贷114</a>
+              <span>评价星级4</span>
+             
+          </div>
+          
+          <div class="tonws-box">
+            
+              <a href="http://www.sudai114.com/detail-23-beijing.html" title="拍拍贷">拍拍贷</a>
+              <span>评价星级5</span>
+             
+          </div>
+          
+          <div class="tonws-box">
+            
+          </div>
+          
+          <div class="tonws-box">
+            
+              <a href="http://www.sudai114.com/detail-162-beijing.html" title="通宝盛行">通宝盛行</a>
+              <span>评价星级0</span>
+             
+          </div>
+          
+          <div class="tonws-box">
+            
+              <a href="http://www.sudai114.com/detail-64-beijing.html" title="渣打无担保贷款">渣打无担保贷款</a>
+              <span>评价星级4</span>
+             
+          </div>
+          
+          <div class="tonws-box">
+            
+              <a href="http://www.sudai114.com/detail-35-beijing.html" title="融宜宝">融宜宝</a>
+              <span>评价星级4</span>
+             
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="item-box-wrap">
+      <div class="item-box fix">
+        <h6 class="evaluate-tit">人人贷</h6>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+<!--  会员评价-->
+<ul class="comment-list fix">
+
+  
+  
+  
+          <li>
+            <a href="http://www.sudai114.com/detail-26-beijing.html#" class="avatar">
+              <img src="/assets/icon_2.png" height="48" width="48">
+            </a>
+            <div class="content">
+            
+               
+                
+              <div class="user-info">
+                59.151.25.32<span title="" class="user-rank-rst urr-rank40"></span> &gt;&gt;评论时间：2012-07-06 10:41:51
+              </div>
+               
+                
+              <div class="comment-rst">
+                <span class="item-rank-rst margin-top-3 irr-star5">(分)</span>
+                <dl>
+                  <dt>人气等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>利率等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>成功等级:</dt><dd>5(分)<span class="note"></span></dd>
+                </dl>
+              </div>
+              <div class="comment-entry">
+                <p>网站是个很不错的模式，基本上是基于你的个人信用评价来做小额贷款的，感觉还是很可靠的。而且公司肯定没问题，主要是你得选择你的贷款对象，从而控制风险。推荐~~~~ps：比存活期好多了……</p>
+              </div>
+            </div>
+          </li>
+        
+          <li>
+            <a href="http://www.sudai114.com/detail-26-beijing.html#" class="avatar">
+              <img src="./人人贷 北京贷款网_速贷114贷款导航_files/icon_2.png" height="48" width="48">
+            </a>
+            <div class="content">
+            
+               
+              <div class="user-info">
+                xzg111<span title="" class="user-rank-rst urr-rank40"></span> &gt;&gt;评论时间：2012-07-04 16:51:52
+              </div>
+               
+                
+                
+              <div class="comment-rst">
+                <span class="item-rank-rst margin-top-3 irr-star5">(分)</span>
+                <dl>
+                  <dt>人气等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>利率等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>成功等级:</dt><dd>5(分)<span class="note"></span></dd>
+                </dl>
+              </div>
+              <div class="comment-entry">
+                <p>万能鲨鱼·百家乐水果机·飞禽走兽等等各种游戏机干扰器，遥控器，让您赢钱不是梦··Q 962092463  TEL:15957007045</p>
+              </div>
+            </div>
+          </li>
+        
+          <li>
+            <a href="http://www.sudai114.com/detail-26-beijing.html#" class="avatar">
+              <img src="./人人贷 北京贷款网_速贷114贷款导航_files/icon_2.png" height="48" width="48">
+            </a>
+            <div class="content">
+            
+               
+                
+              <div class="user-info">
+                124.74.255.106<span title="" class="user-rank-rst urr-rank40"></span> &gt;&gt;评论时间：2012-07-03 11:04:29
+              </div>
+               
+                
+              <div class="comment-rst">
+                <span class="item-rank-rst margin-top-3 irr-star4">(分)</span>
+                <dl>
+                  <dt>人气等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>利率等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>成功等级:</dt><dd>5(分)<span class="note"></span></dd>
+                </dl>
+              </div>
+              <div class="comment-entry">
+                <p>人人借贷保险应该是保险了，它主要是做小额贷款。</p>
+              </div>
+            </div>
+          </li>
+        
+          <li>
+            <a href="http://www.sudai114.com/detail-26-beijing.html#" class="avatar">
+              <img src="./人人贷 北京贷款网_速贷114贷款导航_files/icon_2.png" height="48" width="48">
+            </a>
+            <div class="content">
+            
+               
+              <div class="user-info">
+                mytest1@qq.com<span title="" class="user-rank-rst urr-rank40"></span> &gt;&gt;评论时间：2012-06-29 00:04:42
+              </div>
+               
+                
+                
+              <div class="comment-rst">
+                <span class="item-rank-rst margin-top-3 irr-star4">(分)</span>
+                <dl>
+                  <dt>人气等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>利率等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>成功等级:</dt><dd>5(分)<span class="note"></span></dd>
+                </dl>
+              </div>
+              <div class="comment-entry">
+                <p>人人贷 - 最大、最安全的网络借贷平台</p>
+              </div>
+            </div>
+          </li>
+        
+          <li>
+            <a href="http://www.sudai114.com/detail-26-beijing.html#" class="avatar">
+              <img src="./人人贷 北京贷款网_速贷114贷款导航_files/icon_2.png" height="48" width="48">
+            </a>
+            <div class="content">
+            
+               
+              <div class="user-info">
+                dkycc<span title="" class="user-rank-rst urr-rank40"></span> &gt;&gt;评论时间：2012-06-25 11:58:18
+              </div>
+               
+                
+                
+              <div class="comment-rst">
+                <span class="item-rank-rst margin-top-3 irr-star3">(分)</span>
+                <dl>
+                  <dt>人气等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>利率等级:</dt><dd>5(分)<span class="note"></span></dd>
+                  <dt>成功等级:</dt><dd>5(分)<span class="note"></span></dd>
+                </dl>
+              </div>
+              <div class="comment-entry">
+                <p>www.dky.cc www.scmjjd.com</p>
+              </div>
+            </div>
+          </li>
+        
+  
+
+</ul>
+<script>
+alert(0)
+$(".rating-wrap a").hover(//鼠标失去焦点
+    function(){
+      alert(1)
+     
+    });
+    
+
+</script>
+  
+  
+  
+<div class="scott pages"><span class="disabled"> &lt; </span> <span class="current">1</span> <a href="http://www.sudai114.com/detail-26-beijing-2.html">2</a> <a href="http://www.sudai114.com/detail-26-beijing-2.html"> &gt; </a> <span class="counts">共2页</span> <span class="counts">7条记录</span> </div>
+      <!-- <div class="comment-more">
+          <a href="#">所有点评>></a>
+      </div> -->
+      <a name="bottom"></a> 
+        <!--评价action -->
+      <form action="http://www.sudai114.com/evaluationAdd.jhtml" method="post" id="evaluationForm" name="evaluationForm">
+        <div class="form-block rating-block fix">
+          <span class="label_required">总体评价：<em>*</em></span>
+          <div class="rating-wrap">
+            <ul>
+              <li>
+                <a href="javascript:;" data-rate-value="1" data-hint="很差" title="很差" class="one-star"></a>
+              </li>
+              <li>
+                <a href="javascript:;" data-rate-value="2" data-hint="差" title="差" class="two-stars"></a>
+              </li>
+              <li>
+                <a href="javascript:;" data-rate-value="3" data-hint="还行" title="还行" class="three-stars"></a>
+              </li>
+              <li>
+                <a href="javascript:;" data-rate-value="4" data-hint="好" title="好" class="four-stars"></a>
+              </li>
+              <li>
+                <a href="javascript:;" data-rate-value="5" data-hint="很好" title="很好" class="five-stars"></a>
+              </li>
+            </ul>
+          </div>
+          <span class="hint">点击星星为商户打分</span>
+        </div>
+        <div class="form-block fix">
+          <div class="form-cell ">
+            <span class="label_required">人气等级：<em>*</em></span>
+              <select id="popularityRate" name="popularityRate" class="form-select-sim">
+                <option value="0">请选择</option>
+                <option value="1">差</option>
+                <option value="2">一般</option>
+                <option value="3" checked="">好</option>
+                <option value="4">很好</option>
+                <option value="5" selected="selected">非常好</option>
+              </select>
+          </div>
+          <div class="form-cell inline-cell">
+            <span class="label_required">利率等级：<em>*</em></span>
+              <select id="interestRate" name="interestRate" class="form-select-sim">
+                <option value="0">请选择</option>
+                <option value="1">差</option>
+                <option value="2">一般</option>
+                <option value="3" checked="">好</option>
+                <option value="4">很好</option>
+                <option value="5" selected="selected">非常好</option>
+              </select>
+          </div>
+          <div class="form-cell inline-cell">
+            <span class="label_required">成功等级：<em>*</em></span>
+              <select id="successRate" name="successRate" class="form-select-sim">
+                <option value="0">请选择</option>
+                <option value="1">差</option>
+                <option value="2">一般</option>
+                <option value="3" checked="">好</option>
+                <option value="4">很好</option>
+                <option value="5" selected="selected">非常好</option>
+              </select>
+          </div>
+        </div>
+        <div class="form-block fix">
+          <span class="label_required">评价：<em>*</em></span>
+          <textarea rows="7" class="form-textarea" id="comments" name="comments"></textarea>
+          <div class="review-counter">
+          <span class="note">0~500个字</span>
+            
+            <table class="table_r">
+            <tbody><tr style="display: block;">
+             <td><input type="checkbox" id="anonymous" name="anonymous" value=""></td>
+             <td>匿名评价</td>
+            </tr>
+            <tr style="display: none">
+              <td><input type="text" id="validCode" name="validCode" size="8" maxlength="4"></td>
+              <td><img id="img_validcode" class="pointer" src="./人人贷 北京贷款网_速贷114贷款导航_files/validCodeURl.jhtml" style="cursor: hand;" onclick="changeImg(this)"></td>
+            </tr>
+            </tbody></table>
+          </div>
+          
+        </div>
+        <script type="text/javascript">
+        //定义验证码刷新函数
+         function changeImg(obj){
+          var imgSrc = $(obj);
+          var src = imgSrc.attr("src");
+            src="validCodeURl.jhtml?timestamp="+new Date();
+          imgSrc.attr("src",src);
+         }  
+        
+      
+       (function($){ 
+              $(function(){  
+              if($("#userKey").val()!=null && $("#userKey").val()!=""){
+                 $(".table_r tr").eq(0).hide();
+              } 
+              
+           $(":checkbox").click(function(){
+          if($(this).attr("checked")=="checked"){
+            $("#anonymous").val(1);
+            $(".table_r tr").eq(1).show();
+          }else{
+            $(".table_r tr").eq(1).hide();
+          }
+        }); 
+              
+           
+           
+              });
+      })(jQuery);
+      </script>
+        
+        <div class="form-block review-submit">
+          <button type="button" class="btn-1" id="submiForm" name="submitForm">提交点评</button>
+        </div>
+        <input type="hidden" name="websiteId" id="websiteId" value="26">
+        <input type="hidden" name="overAllLevel" id="overAllLevel" value="">
+        <input type="hidden" name="city" id="city" value="beijing">
+      </form> 
+      </div>
+    </div>
+  </div>
+
+
+

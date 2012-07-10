@@ -68,11 +68,11 @@
 <ul class="nav pull-right">
   <% if user_signed_in? %>
     <li>
-    <%= link_to '注册', destroy_user_session_path, :method=>'delete' %>        
+      <%= link_to 'logout', destroy_user_session_path, :method=>'delete' %>        
     </li>
   <% else %>
     <li>
-    <%= link_to '登陆', new_user_session_path %>  
+      <%= link_to '登陆', new_user_session_path %>  
     </li>
   <% end %>
   <% if user_signed_in? %>
@@ -81,7 +81,7 @@
     </li>
     <% if current_user.has_role? :admin %>
       <li>
-      <%= link_to 'Admin', users_path %>
+      <%= link_to 'Admin', sudai_index_path %>
       </li>
     <% end %>
   <% else %>

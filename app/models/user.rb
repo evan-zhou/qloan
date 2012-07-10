@@ -25,6 +25,9 @@ class User
   field :last_sign_in_ip,    :type => String
   
   field :name, :type => String, :null => false, :default => ""
+  field :role_id, :type => Integer
+
+  belongs_to :role
 
   ## Confirmable
   # field :confirmation_token,   :type => String
@@ -39,4 +42,9 @@ class User
 
   ## Token authenticatable
   # field :authentication_token, :type => String
+
+
+  def has_role?(role_name)
+    return self.role.try(:name) == role_name.to_s
+  end
 end

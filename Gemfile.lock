@@ -117,6 +117,8 @@ GEM
       coderay (~> 1.0.5)
       method_source (~> 0.7.1)
       slop (>= 2.4.4, < 3)
+    quiet_assets (1.0.1)
+      railties (~> 3.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -211,6 +213,7 @@ DEPENDENCIES
   mongoid_colored_logger (= 0.1.1)
   mongoid_rails_migrations (~> 0.0.14)
   pry (= 0.9.9.6)
+  quiet_assets
   rails (= 3.2.6)
   rails-erd (= 0.4.5)
   rails-i18n (= 0.1.8)

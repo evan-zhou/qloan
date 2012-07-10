@@ -1,0 +1,449 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0020) -->
+<html xmlns="http://www.w3.org/1999/xhtml" slick-uniqueid="1"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="baidu-site-verification" content="m5OZrnNmAythBrnl">
+	
+	
+	<title>local速贷114-贷款网址大全，中国最好的网络贷款网址导航</title>
+	<meta name="Author" content="速贷114贷款导航网">
+	<meta name="Keywords" content="贷款，贷款网，贷款网站大全，贷款导航，贷款网站，贷款网大全，贷款网站导航，贷款大全">
+	<meta name="Description" content="【速贷114贷款导航】，最好的贷款网站大全。汇集人人贷、宜信、拍拍贷、易贷网、红岭创投等知名网络贷款平台每日借贷信息！给贷款人士提供最简单高效快捷的网上贷款导航服务。">
+	
+	
+    <%= render :partial => "/shared/js_and_css" %>
+
+  
+
+	<script type="text/javascript">
+		function openWebsite(url){
+			window.open(url);
+		}
+	</script>
+	
+<!--google统计代码-->
+ <%#= javascript_include_tag "application" %>  
+<%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<!--[if IE 6]><div id="ie6" class="ie"><![endif]-->
+<!--[if IE 7]><div id="ie7" class="ie"><![endif]-->
+	<div id="header">
+		<div class="wrap-toolbar">
+			<div class="toolbar">
+				<div class="toolbar-l">
+					<a class="collection" href="javascript:void(0)" onclick="addfavorite()">收藏本页(!)</a>
+					<a class="suggest" id="suggestion" href="javascript:void(0)">投诉建议</a>
+					<a target="_blank" href="">
+					<img border="0" src="" alt="点击这里给我发消息" title="点击这里给我发消息">(!)</a>
+				</div>
+
+				
+				             
+				<div class="login-info">
+					<% if can? :manage, :all %>	
+					  <%= link_to "管理网站", web_sites_path %>
+				  	
+				  <% end %>
+				  <a href="http://www.sudai114.com/portal" target="_self">返回新版首页</a>	
+
+				  <% if user_signed_in? %>
+				  	欢迎您,<%= current_user.email %>
+				  	<%= link_to '退出', destroy_user_session_path, :method=>'delete' %>  
+				  <% else %>			 
+						<a class="resginter" href="#" id="resginter" target="_self">注册</a>
+		    		<a class="logout" href="#" id="login" target="_self">登录</a>
+		    	<% end %>
+				</div> 
+		           
+			</div>
+		</div>
+		
+		<div class="center">
+			<div class="logo">
+				<%=link_to raw('<h1><img src="/assets/logo_p2p.png" height="34px" width="171px" alt="速贷114贷款导航-贷款网站大全">
+				</h1>'), sudai_index_path, :title => "速贷114导航" %>
+			</div>
+
+			<div class="location">
+				<a id="G_loc" href="#">								
+				 <span>全国站</span>			
+				</a>
+			</div>
+
+			<div class="shareto">
+			 
+				<!-- ShareTo Button BEGIN -->
+				<!--修改成百度分享  -->
+			 <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+		        <span class="bds_more">分享到：</span>
+		        <a class="bds_qzone" title="分享到QQ空间"></a>
+		        <a class="bds_tsina" title="分享到新浪微博"></a>
+		        <a class="bds_tqq" title="分享到腾讯微博"></a>
+		        <a class="bds_renren" title="分享到人人网"></a>
+				<a class="shareCount" title="累计分享1次">1</a>
+		    </div>
+			<script type="text/javascript" id="bdshare_js" data="type=tools" src="http://bdimg.share.baidu.com/static/js/bds_s_v2.js?cdnversion=20120620"></script>
+			<script type="text/javascript" id="bdshell_js" src="http://bdimg.share.baidu.com/static/js/shell_v2.js?t=16"></script>
+			<script type="text/javascript">
+				document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?t=" + new Date().getHours();
+			</script>
+			<!-- ShareTo Button END -->
+
+		  </div>
+		   <!-- shareto END -->
+
+		</div>
+     <!-- center END -->
+
+	</div>	
+	<!-- header END -->
+
+
+	<%= yield %>
+<script language="javascript">
+
+
+ //检查用户是否激活
+function checkUser(){
+	var email=jQuery("#regemail").val();
+	if(!email){
+		alert("email格式有错误");
+		return false;
+	}
+	jQuery.ajax({
+		   type: "POST",
+		   url: "http://www.sudai114.com/isExitUser.jhtml?time=" + new Date().getTime(),
+		   data: {email: email	   
+		   },
+		   dataType: "text",
+		   success: function(msg){
+			   if(""!=msg && null!=msg){
+				   alert(msg);
+			   }
+		   }
+		});
+}
+
+//验证用户是否存在
+jQuery(function(){	
+	jQuery('#regemail').blur(function(){
+		checkUser();
+	})
+	
+}); 
+	
+
+	//验证用户登录
+	function validateLogin(){
+		if(jQuery("#email").val() == ""){
+			alert("email不能为空");
+			return false;
+		}
+		if(jQuery("#password").val() == ""){
+			alert("密码不能为空");
+			return false;
+		}
+		return true;
+	}
+	
+	//用户注册
+	function resgiterLogin(){
+		if(jQuery("#username").val() == ""){
+			alert("用户名不能为空");
+			return false;
+		}
+		if(jQuery("#regemail").val() == ""){
+			alert("用户Email不能为空");
+			return false;
+		}
+		if(!checkEmail(jQuery("#regemail").val())){
+			alert("email格式有错误");
+			return false;
+		}
+		if(jQuery("#loginpwd").val() == ""){
+			alert("密码不能为空");
+			return false;
+		}
+	   if(jQuery("#confirmPwd").val()!=jQuery("#loginpwd").val()){
+		   alert("登录密码与确认密码不一致,请重新输入!");
+		   return false;
+	   }  
+		return true;
+	}
+	
+	
+
+	function validateWebsite(){
+		if(jQuery("#name").val() == ""){
+			alert("请填写网站名称");
+			return false;
+		}
+
+		if(jQuery("#telephone").val() == ""){
+			alert("请填写客服电话");
+			return false;
+		}
+
+		if(jQuery("#url").val() == ""){
+			alert("请填写网站地址");
+			return false;
+		}
+
+		if(!isurl(jQuery("#url").val())){
+			alert("请填写正确的网站地址");
+			return false;
+		}
+
+		return true;
+	}
+	
+	//检查用户Email
+	function checkEmail(email){
+		var pattern = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(\.[a-zA-Z0-9_-])+/;   
+	　　return pattern.test(email);   
+	}
+
+	
+	
+	function isurl(str){
+		var RegUrl = new RegExp();
+	    RegUrl.compile("^[A-Za-z]+://[A-Za-z0-9-_]+\\.[A-Za-z0-9-_%&\?\/.=]+$");
+	    if (!RegUrl.test(str)) {
+	        return false;
+	    }
+	    return true;
+	} 
+</script>
+<!-- footer start-->
+<div class="links" align="left">
+	<h2>友情链接:<a href="http://www.sudai114.com/index.jhtml" target="_blank" title="贷款网站">贷款网站</a>|<a href="http://www.chufutong.com/" target="_blank" title="电子商务技术供应商">储付通-电子商务技术供应商</a>|<a href="http://www.baidu.com/" target="_blank" title="百度">百度</a>|		<a href="http://www.google.com/" target="_blank" title="谷歌">谷歌</a>|<a href="http://www.zhongsou.cn/" target="_blank" title="中搜">中搜</a>|<a href="http://sz.tcdai.com/" target="_blank" title="深圳同城贷">深圳同城贷</a>|<a href="http://jn.tcdai.com/" target="_blank" title="济南同城贷">济南同城贷</a>|<a href="http://www.xyklt.com/" target="_blank" title="卡神网">卡神网</a>|<a href="http://www.cddrdk.com/" target="_blank" title="成都贷款">成都贷款</a>|<a href="http://www.kxloan.com/" target="_blank" title="开心贷网络贷款">开心贷网络贷款</a></h2>
+	
+</div>
+<div id="footer">
+	<p align="left" style="font-size: 12px; color:#333333">速贷114贷款导航,最大的贷款网站大全,贷款网首选。汇集最优秀的网络贷款平台信息,提供个人小额贷款,网络借贷,民间贷款,汽车贷款,融资担保,P2P借贷,贷款计算器,民间借贷,快速贷款等信息,给贷款人士提供最简单、高效、快捷的网上贷款导航服务。</p>
+</div>
+<script type="text/javascript" src="/assets/app.js"></script><div class="backToTop" title="返回顶部" style="display: none; ">返回顶部</div>
+<!--[if lte IE 7]></div><![endif]-->
+
+<!-- 用户登录 -->
+
+
+
+<!-- 用户注册Dialog -->
+
+
+
+<!--选择地区-->
+
+<!-- footer end-->
+</a>
+
+
+<div style="display: none; z-index: 1000; outline: 0px; position: absolute; " class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-test-dialog"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-test-dialog">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="test-dialog" style="display: block; " class="ui-dialog-content ui-widget-content">
+	<form id="mainForm" name="mainForm" action="http://www.sudai114.com/admin/add.jhtml" method="post" onsubmit="return validateWebsite();">
+		<fieldset>
+			
+			<label for="name">网站名称：</label>
+			<input type="text" name="name" id="name" class="text ui-widget-content ui-corner-all">
+			<label for="establishTime">成立时间：</label>
+			<input type="text" name="establishTime" id="establishTime" value="2012-07-02" class="text ui-widget-content ui-corner-all Wdate" onclick="WdatePicker()">
+			<label for="biddingCount">正在招标数量：</label>
+			<input type="text" name="biddingCount" id="biddingCount" value="0" class="text ui-widget-content ui-corner-all">
+			<label for="annualRate">普通年利率：</label>
+			<input type="text" name="annualRate" id="annualRate" value="0.0" class="text ui-widget-content ui-corner-all">
+			<label for="telephone">客服电话：</label>
+			<input type="text" name="telephone" id="telephone" value="" class="text ui-widget-content ui-corner-all">
+			<label for="recommendLevel">推荐等级：</label>
+			<select id="recommendLevel" name="recommendLevel" class="text ui-widget-content ui-corner-all">
+				<option value="1">1星级</option>
+				<option value="2">2星级</option>
+				<option value="3">3星级</option>
+				<option value="4">4星级</option>
+				<option value="5">5星级</option>
+			</select>
+			<label for="successRate">成功率：</label>
+			<input type="text" name="successRate" id="successRate" value="0.0" class="text ui-widget-content ui-corner-all">
+			<label for="enrollment">注册人数：</label>
+			<input type="text" name="enrollment" id="enrollment" value="0" class="text ui-widget-content ui-corner-all">
+			<label for="type">类型：</label>
+			<select id="type" name="type" class="text ui-widget-content ui-corner-all">
+				<option value="1">贷方</option>
+				<option value="2">借方</option>
+			</select>
+			<label for="order">排序：</label>
+			<input type="text" name="order" id="order" value="0" class="text ui-widget-content ui-corner-all">
+			<label for="city">所在城市：</label>
+			<select id="city" name="city" class="text ui-widget-content ui-corner-all">
+				
+			</select>
+			
+			<label for="isElite">是否是精华站点：</label>
+			<select id="isElite" name="isElite" class="text ui-widget-content ui-corner-all">
+				<option value="0">设置为非精品网站</option>
+				<option value="1">设置为精品网站</option>
+			</select>
+			<label for="url">网站地址：</label>
+			<input type="text" name="url" id="url" value="http://" class="text ui-widget-content ui-corner-all">
+		</fieldset>
+	</form>
+</div><div class="ui-resizable-handle ui-resizable-n" style=""></div><div class="ui-resizable-handle ui-resizable-e" style=""></div><div class="ui-resizable-handle ui-resizable-s" style=""></div><div class="ui-resizable-handle ui-resizable-w" style=""></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; "></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; "></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; "></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; "></div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix"><div class="ui-dialog-buttonset"><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">提交</span></button><button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only" role="button" aria-disabled="false"><span class="ui-button-text">Cancel</span></button></div></div></div><div style="display: none; z-index: 1000; outline: 0px; position: absolute; " class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-login-dialog"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-login-dialog">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="login-dialog" style="display: block; " class="ui-dialog-content ui-widget-content">
+	<%= form_for(@user, :as => :user, :url => session_path(:user)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+ 
+
+  <div><%= f.submit "登录" %></div>
+<% end %>
+</div><div class="ui-resizable-handle ui-resizable-n" style=""></div><div class="ui-resizable-handle ui-resizable-e" style=""></div><div class="ui-resizable-handle ui-resizable-s" style=""></div><div class="ui-resizable-handle ui-resizable-w" style=""></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; "></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; "></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; "></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; "></div></div><div style="display: none; z-index: 1000; outline: 0px; position: absolute; " class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-register-dialog"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-register-dialog">&nbsp;</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="register-dialog" style="" class="ui-dialog-content ui-widget-content">
+	<%= form_for(@user, :as => :user, :url => session_path(:user)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+ 
+
+  <div><%= f.submit "登录" %></div>
+<% end %>
+</div><div class="ui-resizable-handle ui-resizable-n" style=""></div><div class="ui-resizable-handle ui-resizable-e" style=""></div><div class="ui-resizable-handle ui-resizable-s" style=""></div><div class="ui-resizable-handle ui-resizable-w" style=""></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; "></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; "></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; "></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; "></div></div><div style="display: none; z-index: 1000; outline: 0px; position: absolute; " class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-suggest-dialog"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-suggest-dialog">您的建议</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div id="suggest-dialog" style="" class="ui-dialog-content ui-widget-content">
+	<form id="suggestForm" name="suggestForm">
+		<fieldset>
+			<label for="suggestarea">您的建议：</label>
+			<textarea name="suggest" id="suggest" class="text ui-widget-content ui-corner-all"></textarea>
+			<input type="button" value="提交" name="submit" onclick="sendSuggest();">
+		</fieldset>
+	</form>
+</div><div class="ui-resizable-handle ui-resizable-n" style=""></div><div class="ui-resizable-handle ui-resizable-e" style=""></div><div class="ui-resizable-handle ui-resizable-s" style=""></div><div class="ui-resizable-handle ui-resizable-w" style=""></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001; "></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002; "></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003; "></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004; "></div></div><div id="G_loc-panel" class="pop-panel pp_location" style="position: absolute; visibility: hidden; z-index: 1000; top: 97px; left: 341px; ">
+	<dl>
+		<dt>华北东北:</dt>
+		<dd>
+			<ul class="Fix">
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_beijing&#39;);" href="beijing">北京</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_tianjin&#39;);" href="tianjin">天津</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_shenyang&#39;);" href="shenyang">沈阳</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_dalian&#39;);" href="dalian">大连</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_changchun&#39;);" href="changchun">长春</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_haerbin&#39;);" href="haerbin">哈尔滨</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_shijiazhuang&#39;);" href="shijiazhuang">石家庄</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_taiyuan&#39;);" href="taiyuan">太原</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_huhehaote&#39;);" href="huhehaote">呼和浩特</a></li>
+			</ul>
+		</dd>
+	</dl>
+	<dl>
+		<dt>华东地区:</dt>
+		<dd>
+			<ul class="Fix">
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_shanghai&#39;);" href="shanghai">上海</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_hangzhou&#39;);" href="hangzhou">杭州</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_nanjing&#39;);" href="nanjing">南京</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_suzhou&#39;);" href="suzhou">苏州</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_wuxi&#39;);" href="wuxi">无锡</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_jinan&#39;);" href="jinan">济南</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_xiamen&#39;);" href="xiamen">厦门</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_ningbo&#39;);" href="ningbo">宁波</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_fuzhou&#39;);" href="fuzhou">福州</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_qingdao&#39;);" href="qingdao">青岛</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_hefei&#39;);" href="hefei">合肥</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_yangzhou&#39;);" href="yangzhou">扬州</a></li>
+			</ul>
+		</dd>
+	</dl>
+	<dl>
+		<dt>中部西部:</dt>
+		<dd>
+			<ul class="Fix">
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_wuhan&#39;);" href="wuhan">武汉</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_zhengzhou&#39;);" href="zhengzhou">郑州</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_changsha&#39;);" href="changsha">长沙</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_nanchang&#39;);" href="nanchang">南昌</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_guiyang&#39;);" href="guiyang">贵阳</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_xining&#39;);" href="xining">西宁</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_chengdu&#39;);" href="chengdu">成都</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_chongqing&#39;);" href="chongqing">重庆</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_xian&#39;);" href="xian">西安</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_kunming&#39;);" href="kunming">昆明</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_lanzhou&#39;);" href="lanzhou">兰州</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_wulumuqi&#39;);" href="wulumuqi">乌鲁木齐</a></li>
+			</ul>
+		</dd>
+	</dl>
+	<dl class="last">
+		<dt>华南地区:</dt>
+		<dd>
+			<ul class="Fix">
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_guangzhou&#39;);" href="guangzhou">广州</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_shenzhen&#39;);" href="shenzhen">深圳</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_hongkong&#39;);" href="hongkong">香港</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_foshan&#39;);" href="foshan">佛山</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_zhuhai&#39;);" href="zhuhai">珠海</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_dongguan&#39;);" href="dongguan">东莞</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_sanya&#39;);" href="sanya">三亚</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_haikou&#39;);" href="haikou">海口</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_macao&#39;);" href="macao">澳门</a></li>
+				<li><a onclick="pageTracker._trackPageview(&#39;dp_head_hotcity_nanning&#39;);" href="nanning">南宁</a></li>
+			</ul>
+		</dd>
+	</dl>
+	<div class="Fix"><a onclick="pageTracker._trackPageview(&#39;dp_head_othercity_beijing&#39;);" href="quanguo" class="more">全国</a></div>
+</div><div id="_my97DP" style="position: absolute; top: -1970px; left: -1970px; ">
+
+</div>
+
+
+
+
+<!-- 显示评价 -->
+<script type="text/javascript">
+	(function($) { 
+	$(function(){
+		$(".hot-url-index .item-rank-rst").hover(
+			function(){
+				var websiteId=$(this).attr("attrValue");//获取当前对象的值
+				var _this=$(this);//获取当前对象
+				 $.ajax({
+					   type: "POST",
+					   url: "rateLevel.jhtml",
+					   async: false,//设置ajax同步
+					   data: {websiteId: websiteId	   
+					   },
+					   dataType: "json",
+					   success: function(json){
+						  if(null!=json){
+						   $.each(json,function(i){	  
+							  _this.parent().css("z-index","99").find(".tips-star").show();
+							 	//_this.parent().find(".tips-star>ul>li").eq(0).find("span").eq(1).removeClass();
+								//_this.parent().find(".tips-star>ul>li").eq(0).find("span").eq(1).addClass("item-rank-rst margin-top-2 irr-star"+json[i].popularityLevel);
+							   $("#overAllLeverid").removeClass();
+							   $("#overAllLeverid").addClass("item-rank-rst margin-top-2 irr-star"+json[i].overAllLever);//综合评价
+							   $("#successLevelid").removeClass();
+							   $("#successLevelid").addClass("item-rank-rst margin-top-2 irr-star"+json[i].successLevel);//成功等级
+							   $("#popularityLevelid").removeClass();
+							   $("#popularityLevelid").addClass("item-rank-rst margin-top-2 irr-star"+json[i].popularityLevel);//人气等级
+							   $("#interestLevelid").removeClass();
+							   $("#interestLevelid").addClass("item-rank-rst margin-top-2 irr-star"+json[i].interestLevel);	//利率等级						   
+						   });
+						  }else{
+							  _this.parent().css("z-index","99").find(".tips-star").show();  
+						  }
+					   }
+					});	
+				
+			},function(){
+				$(this).parent().css("z-index","0").find(".tips-star").hide();
+			}
+		);
+	});
+	})(jQuery);
+	</script>
+
+	</body>
+</html>

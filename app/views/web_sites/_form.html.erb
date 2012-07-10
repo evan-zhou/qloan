@@ -1,0 +1,49 @@
+<%= form_for(@web_site) do |f| %>
+  <% if @web_site.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@web_site.errors.count, "error") %> prohibited this web_site from being saved:</h2>
+
+      <ul>
+      <% @web_site.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :set_year %><br />
+    <%= f.number_field :set_year %>
+  </div>
+  <div class="field">
+    <%= f.label :project_num %><br />
+    <%= f.number_field :project_num %>
+  </div>
+  <div class="field">
+    <%= f.label :year_rate %><br />
+    <%= f.text_field :year_rate %>
+  </div>
+  <div class="field">
+    <%= f.label :service_phone %><br />
+    <%= f.text_field :service_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :lv %><br />
+    <%= f.number_field :lv %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :desc %><br />
+    <%= f.text_area :desc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
