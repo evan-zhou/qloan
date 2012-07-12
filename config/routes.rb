@@ -1,4 +1,6 @@
 Qloan::Application.routes.draw do
+  resources :cities
+
   resources :web_sites
 
   resources :roles

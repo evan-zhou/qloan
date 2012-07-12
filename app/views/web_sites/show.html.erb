@@ -134,7 +134,7 @@
     <!-- 详情页简介 -->
     <div class="item-box-wrap">
       <div class="item-box fix">
-        <h6 class="site-name"><a href="http://www.renrendai.com/">人人贷</a></h6>
+        <h6 class="site-name"><a href="http://www.renrendai.com/"><%= @web_site.name %></a></h6>
         <div class="site-content">
           <div class="overall-rating fix">
             <span class="points">80%</span>  <!--总体评价 -->
@@ -198,7 +198,9 @@
         <div class="site-detail">
           <h6 class="company-tit">公司简介</h6>
           <div class="detail-intro"><!-- 介绍公司内容 -->         
-            <p>人人贷(renrendai.com)为有资金需求和理财需求的个人搭建了一个公平、透明、稳定、高效的网络互动平台。用户可以在人人贷上获得信用评级、发布借款请求满足个人的资金需要；也可以把自己的闲余资金通过人人贷出借给信用良好有资金需求的个人，在获得良好的资金回报率的同时帮助了他人。<br>人人贷缘起<br>随着互联网用户的普及、技术的进步与货币数字化的迅速发展，2005年在英国首次出现个人对个人（P2P）的网络信贷服务平台。这种模式由于使借贷双方互惠双赢，加上其高效便捷的操作方式、个性化的利率定价机制，推出后得到广泛的认可和关注，迅速在其他国家复制。我们团队看到了这种模式将对中国民间信贷及小额贷款行业带来深远积极的影响。我们决定结合中国的社会信用状况，利用可靠的信用审核模型和先进的技术，创建了适合中国的P2P小额信贷网络平台——人人贷(renrendai.com)。<br>社会意义<br>P2P小额贷款是一种将非常小额度的贷款聚集起来借贷给有资金需求人群的一种商业模型。它的社会价值主要体现在满足个人资金需求、发展个人信用体系和提高社会闲散资金利用率三个方面：<br>1）在中国，银行对个人信用贷款的条件要求很高，个人从银行系统融资面临很多困难,P2P小额贷款为需要资金的人提供了新的融资渠道。<br>2）P2P小额贷款主要是以个人信用评价为基础的贷款，它的发展有助于个人体现自身的信用价值，提高社会个人信用体系的建设。<br>3）P2P小额贷款扩宽了个人投资的渠道，加大了资金的流动，提高了社会闲散资金的使用率，促进了经济的发展。<br>P2P网络借贷平台的出现，不仅仅是一个创新的商业模式, 它更为缩小社会贫富差距、创造就业、实现经济长期发展、社会和谐作出了重大贡献。<br>人人贷的愿景<br>我们坚信，随着时代的进步，中国社会的信用体系必将逐步完善，而技术的革新，也必将使民间借贷的模式发生革命性的变化。我们期待在这次进步的浪潮中，走在时代的前端，打造出中国最诚信可靠的P2P网络借贷平台，成为一家卓越的、实现巨大社会价值的企业。 </p>
+            <p>
+              <%= @web_site.desc %>
+            </p>
           </div>
         </div>
         <div class="site-towns">
@@ -406,21 +408,8 @@
               </div>
             </div>
           </li>
-        
-  
-
 </ul>
-<script>
-alert(0)
-$(".rating-wrap a").hover(//鼠标失去焦点
-    function(){
-      alert(1)
-     
-    });
-    
 
-</script>
-  
   
   
 <div class="scott pages"><span class="disabled"> &lt; </span> <span class="current">1</span> <a href="http://www.sudai114.com/detail-26-beijing-2.html">2</a> <a href="http://www.sudai114.com/detail-26-beijing-2.html"> &gt; </a> <span class="counts">共2页</span> <span class="counts">7条记录</span> </div>

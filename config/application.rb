@@ -71,6 +71,8 @@ module Qloan
       g.assets false
     end  
 
+    #Mongoid.logger.level = Logger::DEBUG
+   # Moped.logger.level = Logger::DEBUG
 
   end
 end
